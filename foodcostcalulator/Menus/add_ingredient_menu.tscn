@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://btla1i0cswcf2"]
+
+[ext_resource type="Script" path="res://Menus/add_ingredient_menu.gd" id="1_yvhub"]
+
+[node name="AddIngredientMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yvhub")
+
+[node name="EnterName" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Prompt" type="Label" parent="EnterName"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 34.0
+offset_right = 181.0
+offset_bottom = 57.0
+text = "Enter name:"
+
+[node name="InputField" type="LineEdit" parent="EnterName"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 71.0
+offset_right = 242.0
+offset_bottom = 102.0
+
+[node name="EnterCost" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 89.0
+offset_right = 40.0
+offset_bottom = 129.0
+
+[node name="Prompt" type="Label" parent="EnterCost"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 34.0
+offset_right = 181.0
+offset_bottom = 57.0
+text = "Enter cost:"
+
+[node name="InputField" type="LineEdit" parent="EnterCost"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 71.0
+offset_right = 242.0
+offset_bottom = 102.0
+
+[connection signal="text_submitted" from="EnterName/InputField" to="." method="confirm_name"]
+[connection signal="text_submitted" from="EnterCost/InputField" to="." method="confirm_name"]
