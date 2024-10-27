@@ -82,3 +82,5 @@ func load_data() -> void:
 			if i == "Filename" or i == "Parent":
 				continue
 			new_object.set(i, node_data[i])
+		if new_object is Ingredient:
+			new_object.name = new_object.ingredient_name

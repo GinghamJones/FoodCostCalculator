@@ -70,4 +70,5 @@ offset_right = 132.0
 offset_bottom = 245.0
 text = "Confirm"
 
+[connection signal="text_changed" from="EnterCost/InputField" to="." method="_on_input_field_text_changed"]
 [connection signal="pressed" from="ConfirmButton" to="." method="_on_confirm_button_pressed"]
