@@ -38,11 +38,15 @@ func change_scene(scene : Helpers.Scenes) -> void:
 	if new_scene == null:
 		push_error("Scene not found")
 		return
-		
+	
+	if current_scene.has_method("clear_scene"):
+		current_scene.clear_screen()
 	remove_child(current_scene)
 	SceneBuffer.add_scene_to_queue(current_scene)
 	current_scene = new_scene
 	add_child(current_scene)
+	if current_scene.has_method("load_scene"):
+		current_scene.load_scene()
 
 
 func quit_program() -> void:

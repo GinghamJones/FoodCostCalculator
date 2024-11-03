@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://vqsr3slems7a"]
+[gd_scene load_steps=2 format=3 uid="uid://vqsr3slems7a"]
+
+[ext_resource type="Script" path="res://Menus/add_recipe_menu.gd" id="1_x8stj"]
 
 [node name="AddRecipeMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +9,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_x8stj")
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 566.0
+offset_right = 97.0
+offset_bottom = 594.0
+text = "Back"
+
+[node name="IngredientButtons" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 270.0
+offset_bottom = 509.0
+columns = 3
+
+[node name="ConfirmButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 522.0
+offset_right = 211.0
+offset_bottom = 544.0
+text = "Confirm"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
