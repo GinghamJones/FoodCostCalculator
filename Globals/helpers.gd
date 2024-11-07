@@ -2,7 +2,8 @@ extends Node
 
 enum Scenes{
 	main_menu,
-	login,
+	ingredients,
+	recipes,
 	add_user,
 	add_recipe,
 	add_ingredient,

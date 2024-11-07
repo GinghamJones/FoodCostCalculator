@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c36fjnnney3ff"]
+
+[ext_resource type="Script" path="res://Nodes/cost_line_edit.gd" id="1_sye6y"]
+
+[node name="CostLineEdit" type="LineEdit"]
+offset_right = 67.0625
+offset_bottom = 31.0
+script = ExtResource("1_sye6y")
+
+[connection signal="text_changed" from="." to="." method="cost_changed"]

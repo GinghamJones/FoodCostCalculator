@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://lcggc762kvjq"]
+[gd_scene load_steps=4 format=3 uid="uid://lcggc762kvjq"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_yklf1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_habj0"]
+bg_color = Color(0.833216, 0.467925, 0.60538, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkubr"]
+bg_color = Color(0.710891, 0.498647, 0.832672, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,6 +25,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yklf1")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 270.0
+offset_bottom = 600.0
+color = Color(1, 0.892, 0.76, 0.721569)
+
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_left = 86.0
@@ -19,45 +39,25 @@ offset_right = 174.0
 offset_bottom = 34.0
 text = "Main Menu"
 
-[node name="AddIngredient" type="Button" parent="."]
+[node name="Ingredients" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
 offset_left = 7.0
 offset_top = 52.0
 offset_right = 130.0
-offset_bottom = 83.0
-text = "Add Ingredient"
+offset_bottom = 162.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_habj0")
+text = "Ingredients"
 
-[node name="AddRecipe" type="Button" parent="."]
+[node name="Recipe" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_left = 7.0
-offset_top = 88.0
-offset_right = 101.0
-offset_bottom = 119.0
+offset_left = 109.0
+offset_top = 219.0
+offset_right = 259.0
+offset_bottom = 369.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hkubr")
 text = "Add Recipe"
-
-[node name="ChangeIngredient" type="Button" parent="."]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 126.0
-offset_right = 158.0
-offset_bottom = 157.0
-text = "Change Ingredient"
-
-[node name="ChangeRecipe" type="Button" parent="."]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 164.0
-offset_right = 129.0
-offset_bottom = 195.0
-text = "Change Recipe"
-
-[node name="CalculateCost" type="Button" parent="."]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 203.0
-offset_right = 129.0
-offset_bottom = 234.0
-text = "Calculate Cost"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
@@ -67,9 +67,6 @@ offset_right = 84.0
 offset_bottom = 583.0
 text = "Exit"
 
-[connection signal="pressed" from="AddIngredient" to="." method="_on_add_ingredient_pressed"]
-[connection signal="pressed" from="AddRecipe" to="." method="_on_add_recipe_pressed"]
-[connection signal="pressed" from="ChangeIngredient" to="." method="_on_change_ingredient_pressed"]
-[connection signal="pressed" from="ChangeRecipe" to="." method="_on_change_recipe_pressed"]
-[connection signal="pressed" from="CalculateCost" to="." method="_on_calculate_cost_pressed"]
+[connection signal="pressed" from="Ingredients" to="." method="_on_ingredients_pressed"]
+[connection signal="pressed" from="Recipe" to="." method="_on_recipes_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

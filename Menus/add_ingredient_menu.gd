@@ -26,6 +26,4 @@ func _on_confirm_button_pressed() -> void:
 
 
 func _on_input_field_text_changed(new_text: String) -> void:
-	for i in new_text.length():
-		if new_text[i] != "." and not new_text[i].is_valid_float():
-			cost_input.delete_char_at_caret()
+	pass

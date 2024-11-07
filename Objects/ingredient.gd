@@ -5,6 +5,7 @@ var ingredient_name : String
 var brand : String
 var cost_per_pound : float
 
+
 func _ready() -> void:
 	print("%s has been created" % ingredient_name)
 

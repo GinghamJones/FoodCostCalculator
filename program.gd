@@ -4,9 +4,12 @@ extends Control
 const ADD_RECIPE_MENU = preload("res://Menus/add_recipe_menu.tscn")
 const MAIN_MENU = preload("res://Menus/main_menu.tscn")
 const ADD_INGREDIENT_MENU = preload("res://Menus/add_ingredient_menu.tscn")
-
+const INGREDIENTS_MENU = preload("res://Menus/ingredients_menu.tscn")
+const RECIPES_MENU = preload("res://Menus/recipes_menu.tscn")
 
 static var scene_map : Dictionary = {
+	Helpers.Scenes.ingredients : INGREDIENTS_MENU.instantiate(),
+	Helpers.Scenes.recipes : RECIPES_MENU.instantiate(),
 	Helpers.Scenes.add_recipe : ADD_RECIPE_MENU.instantiate(),
 	Helpers.Scenes.main_menu : MAIN_MENU.instantiate(),
 	Helpers.Scenes.add_ingredient : ADD_INGREDIENT_MENU.instantiate(),

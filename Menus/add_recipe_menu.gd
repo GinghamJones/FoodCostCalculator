@@ -9,11 +9,13 @@ var unit_edit_menu : MenuButton
 
 
 func load_scene() -> void:
+	# Setup when initially visiting page
 	for ing in IngredientStore.get_children():
 		if ing is Ingredient:
 			ings.push_back(ing)
 	
 	for i : Ingredient in ings:
+		# Button for choosing ingredient to add
 		var button : Button = Button.new()
 		button.text = i.ingredient_name
 		ingredient_buttons.add_child(button)
@@ -31,6 +33,7 @@ func load_scene() -> void:
 		unit_edit.get_popup().add_item("Cups", 0)
 		unit_edit.get_popup().add_item("Tbsp", 1)
 		unit_edit.get_popup().add_item("Tsp", 2)
+		unit_edit.get_popup().connect("index_pressed", Callable(self, "change_unit_edit_text"))
 
 
 func select_ingredient(ing_name : String) -> void:
@@ -48,6 +51,7 @@ func edit_amount(amount : String) -> void:
 
 func add_ingredient_to_recipe() -> void:
 	var new_recipe_ing : IngredientForRecipe = IngredientForRecipe.new()
+	# Not finished!!!
 
 
 func _on_back_button_pressed() -> void:
@@ -58,13 +62,17 @@ func _on_confirm_button_pressed() -> void:
 	var unit_index : int = unit_edit_menu.get_popup().get_focused_item()
 	var unit : IngredientForRecipe.Units
 	match unit_index:
-		0: IngredientForRecipe.Units.cups
-		1: IngredientForRecipe.Units.tbsp
-		2: IngredientForRecipe.Units.tsp
+		0: unit = IngredientForRecipe.Units.cups
+		1: unit = IngredientForRecipe.Units.tbsp
+		2: unit = IngredientForRecipe.Units.tsp
 	
 	var recipe : Recipe = Recipe.new()
-	
-		
+	#Not finished!!!!
+
+
+func change_unit_edit_text(index : int) -> void:
+	unit_edit_menu.text = unit_edit_menu.get_popup().get_item_text(index)
+
 
 func clear_scene() -> void:
 	for child in ingredient_buttons.get_children():
